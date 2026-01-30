@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Pixel Wall</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Global Pixel Wall</h1>
+      <p class="subtitle">Click a square to change its color</p>
+    </header>
+
+    <div id="loading" class="loading" aria-live="polite">
+      <div class="spinner"></div>
+      <p>Loading pixel grid…</p>
+    </div>
+
+    <div id="grid-container" class="grid-container" hidden>
+      <div id="pixel-grid" class="pixel-grid" role="grid" aria-label="20 by 20 pixel grid"></div>
+    </div>
+
+    <input type="color" id="color-picker" class="color-picker" value="#6366f1" aria-label="Choose color" tabindex="-1">
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
